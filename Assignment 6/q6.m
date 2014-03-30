@@ -86,6 +86,6 @@ function r = heuns(h)
 end
 
 function r = sol(t)
-    r = ((4/3)*exp(3*t)) - t - (1/3);
+    r = exp(-1*(t^2)/2);
     return
 end
