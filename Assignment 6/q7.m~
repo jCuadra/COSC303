@@ -1,17 +1,25 @@
 function q7()
     t = 0;
-    h = 0.;
-    second_order(t+h)
-    third_order(t+h)
+    h = 1;
+    
+    x = second_order(t+h);
+    y = third_order(t+h);
+    A = [2 x ((x-f(t+h))/f(t+h)); 3 y ((y-f(t+h))/f(t+h))];
+    disp('    Degree    Approx    Error');
+    A
 end
 
-function r = second_order(x)
-    r = 1 - x -((1/2)*(x^2));
+function r = second_order(h)
+    r = (1 - h -((1/2)*(h^2)));
     return
 end
 
-function r = third_order(x)
-    r = second_order(x) + ((1/6)*(x^3));
+function r = third_order(h)
+    r = (1 - h -((1/2)*(h^2)) + ((1/6)*(h^3)));
     return
 end
 
+function r = f(t)
+    r = (-1*exp(-t)) + (t^2) - (2*t) + 2;
+    return
+end
