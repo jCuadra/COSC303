@@ -1,0 +1,17 @@
+function q7()
+    t = 0;
+    h = 0.;
+    second_order(t+h)
+    third_order(t+h)
+end
+
+function r = second_order(x)
+    r = 1 - x -((1/2)*(x^2));
+    return
+end
+
+function r = third_order(x)
+    r = second_order(x) + ((1/6)*(x^3));
+    return
+end
+
